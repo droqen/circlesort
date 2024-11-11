@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://84276mryapi"]
+
+[ext_resource type="Texture2D" uid="uid://cygvox10vx7qx" path="res://jigcircley.png" id="1_mc2ko"]
+
+[node name="tile" type="Sprite2D"]
+position = Vector2(5, 5)
+texture = ExtResource("1_mc2ko")
+hframes = 10
+vframes = 10
