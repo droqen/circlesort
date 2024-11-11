@@ -26,7 +26,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var m = get_global_mouse_position()
 	var nearest_tile : Sprite2D = null
-	var nearest_tdistsqr : float = 999
+	var nearest_tdistsqr : float = 100
 	for tile in tiles:
 		var tdistsqr = tile.position.distance_squared_to(m)
 		if tdistsqr < nearest_tdistsqr:
@@ -34,14 +34,15 @@ func _physics_process(_delta: float) -> void:
 			nearest_tdistsqr = tdistsqr
 	for tile in tiles:
 		if tile == nearest_tile:
-			tile.modulate = Color(1.5,1.5,1.5)
+			tile.modulate = lerp(tile.modulate,Color(1.2,1.2,1.2),0.15)
 		else:
-			tile.modulate = Color.WHITE
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			tile.modulate = lerp(tile.modulate,Color.WHITE,0.05)
+	if Input.is_action_pressed("click"):
 		if heldtile == null:
 			heldtile = nearest_tile
 		elif heldtile != nearest_tile:
 			swap(heldtile,nearest_tile)
+		heldtile.modulate = lerp(heldtile.modulate,Color(1.5,1.5,1.5),0.5)
 	else:
 		heldtile = null
 
