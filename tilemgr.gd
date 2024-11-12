@@ -47,6 +47,7 @@ func _physics_process(_delta: float) -> void:
 		heldtile = null
 
 func swap(a:Node2D,b:Node2D):
-	var pa : Vector2 = a.position
-	a.position = b.position
-	b.position = pa;
+	if a and b:
+		var pa : Vector2 = a.position
+		a.position = b.position
+		b.position = pa;
