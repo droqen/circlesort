@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://2sl3ndmrm5xr"]
+
+[ext_resource type="Script" path="res://zoomeymouseytest/swapmap_container.gd" id="1_6gpqk"]
+[ext_resource type="Texture2D" uid="uid://omedy0msflnw" path="res://pixel/bw_scene.png" id="1_at5y0"]
+[ext_resource type="Script" path="res://zoomeymouseytest/swapmap.gd" id="1_auoic"]
+
+[node name="Test" type="Node2D"]
+
+[node name="swapmap_container" type="Node2D" parent="."]
+script = ExtResource("1_6gpqk")
+
+[node name="swapmap" type="Node2D" parent="swapmap_container"]
+script = ExtResource("1_auoic")
+texture = ExtResource("1_at5y0")
+tileswide = null
+tileshigh = null
